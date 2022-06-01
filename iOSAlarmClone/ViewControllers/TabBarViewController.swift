@@ -14,8 +14,11 @@ class TabBarViewController: UITabBarController {
         
         setupTabBar()
     }
-    
-    func setupTabBar() {
+}
+
+extension TabBarViewController {
+    // MARK: 탭 바 설정
+    private func setupTabBar() {
         self.tabBar.tintColor = .systemOrange
         self.tabBar.unselectedItemTintColor = .systemGray3
     }

@@ -22,8 +22,8 @@
 		B7F2376B2847943500B05A7B /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2376A2847943500B05A7B /* TimerViewController.swift */; };
 		B7F2376F2847999400B05A7B /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2376D2847999400B05A7B /* AlarmTableViewCell.swift */; };
 		B7F237702847999400B05A7B /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F2376E2847999400B05A7B /* AlarmTableViewCell.xib */; };
-		B7F23774284799AF00B05A7B /* SleepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F23772284799AF00B05A7B /* SleepTableViewCell.swift */; };
-		B7F23775284799AF00B05A7B /* SleepTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F23773284799AF00B05A7B /* SleepTableViewCell.xib */; };
+		B7F237782847A35C00B05A7B /* SleepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F237762847A35C00B05A7B /* SleepTableViewCell.swift */; };
+		B7F237792847A35C00B05A7B /* SleepTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F237772847A35C00B05A7B /* SleepTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,8 @@
 		B7F2376A2847943500B05A7B /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B7F2376D2847999400B05A7B /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		B7F2376E2847999400B05A7B /* AlarmTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmTableViewCell.xib; sourceTree = "<group>"; };
-		B7F23772284799AF00B05A7B /* SleepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTableViewCell.swift; sourceTree = "<group>"; };
-		B7F23773284799AF00B05A7B /* SleepTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepTableViewCell.xib; sourceTree = "<group>"; };
+		B7F237762847A35C00B05A7B /* SleepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTableViewCell.swift; sourceTree = "<group>"; };
+		B7F237772847A35C00B05A7B /* SleepTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +161,8 @@
 			children = (
 				B7F2376D2847999400B05A7B /* AlarmTableViewCell.swift */,
 				B7F2376E2847999400B05A7B /* AlarmTableViewCell.xib */,
-				B7F23772284799AF00B05A7B /* SleepTableViewCell.swift */,
-				B7F23773284799AF00B05A7B /* SleepTableViewCell.xib */,
+				B7F237762847A35C00B05A7B /* SleepTableViewCell.swift */,
+				B7F237772847A35C00B05A7B /* SleepTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7F23775284799AF00B05A7B /* SleepTableViewCell.xib in Resources */,
+				B7F237792847A35C00B05A7B /* SleepTableViewCell.xib in Resources */,
 				B7F2373D28478E7600B05A7B /* LaunchScreen.storyboard in Resources */,
 				B7F2373A28478E7600B05A7B /* Assets.xcassets in Resources */,
 				B7F2373828478E7500B05A7B /* Main.storyboard in Resources */,
@@ -302,7 +302,7 @@
 			files = (
 				B7F23761284793B600B05A7B /* TabBarViewController.swift in Sources */,
 				B7F237672847942700B05A7B /* AlarmViewController.swift in Sources */,
-				B7F23774284799AF00B05A7B /* SleepTableViewCell.swift in Sources */,
+				B7F237782847A35C00B05A7B /* SleepTableViewCell.swift in Sources */,
 				B7F2373128478E7500B05A7B /* AppDelegate.swift in Sources */,
 				B7F2376F2847999400B05A7B /* AlarmTableViewCell.swift in Sources */,
 				B7F2376B2847943500B05A7B /* TimerViewController.swift in Sources */,

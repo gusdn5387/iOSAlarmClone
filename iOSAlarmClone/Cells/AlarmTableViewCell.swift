@@ -11,13 +11,18 @@ class AlarmTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupLayout()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
+}
+
+extension AlarmTableViewCell {
+    // MARK: 레이아웃 설정
+    private func setupLayout() {
+        backgroundColor = .clear
+    }
 }

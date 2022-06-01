@@ -52,7 +52,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Cny-ch-cZD">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="systemOrangeColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="02m-US-tV1" kind="relationship" relationship="rootViewController" id="c2e-Kl-Luk"/>
@@ -69,8 +68,20 @@
                     <view key="view" contentMode="scaleToFill" id="OJY-zY-l7q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="add-oZ-ifv">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ypJ-6C-lFM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ypJ-6C-lFM" firstAttribute="trailing" secondItem="add-oZ-ifv" secondAttribute="trailing" id="Eh3-M3-eKz"/>
+                            <constraint firstItem="add-oZ-ifv" firstAttribute="top" secondItem="ypJ-6C-lFM" secondAttribute="top" id="OOp-g6-KWl"/>
+                            <constraint firstItem="add-oZ-ifv" firstAttribute="leading" secondItem="ypJ-6C-lFM" secondAttribute="leading" id="Qce-m0-UTk"/>
+                            <constraint firstItem="ypJ-6C-lFM" firstAttribute="bottom" secondItem="add-oZ-ifv" secondAttribute="bottom" id="ntX-qO-rJL"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="알람" image="alarm.fill" catalog="system" id="aPn-9m-UPN"/>
                     <navigationItem key="navigationItem" title="알람" id="GtT-Zl-mip">
@@ -81,6 +92,9 @@
                             <color key="tintColor" systemColor="systemOrangeColor"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="add-oZ-ifv" id="rA5-cI-JVl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aD6-fQ-0gu" sceneMemberID="firstResponder"/>
             </objects>

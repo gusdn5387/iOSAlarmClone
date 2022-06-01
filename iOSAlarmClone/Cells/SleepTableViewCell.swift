@@ -12,6 +12,7 @@ class SleepTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupLayout()
+        
     }
 }
 

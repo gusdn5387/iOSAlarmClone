@@ -8,6 +8,9 @@
 import UIKit
 
 class AlarmViewController: UIViewController {
+    // 테스트 데이터
+    var testArray = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -62,20 +65,43 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 1
         default:
-            return 10
+            return testArray.count
         }
     }
     
     // 셀 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell
-        
-        if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "SleepCell", for: indexPath) as! SleepTableViewCell
-        } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath) as! AlarmTableViewCell
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SleepCell", for: indexPath) as! SleepTableViewCell
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath) as! AlarmTableViewCell
+            cell.update(testArray[indexPath.row])
+            
+            return cell
         }
-        
-        return cell
+    }
+    
+    // editingStyle 설정
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            testArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+
+    // 특정 셀의 editingStyle 설정
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if indexPath.section == 0 {
+            return .none
+        } else {
+            return .delete
+        }
+    }
+    
+    // 스와이프 액션 > 삭제 버튼 타이틀 설정
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "삭제"
     }
 }

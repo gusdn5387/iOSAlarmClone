@@ -18,6 +18,19 @@ class AlarmViewController: UIViewController {
 
         setupTableView()
     }
+    
+    // MARK: '편집' 버튼 클릭 시
+    @IBAction func editTable(_ sender: Any) {
+        if self.tableView.isEditing {
+            navigationItem.leftBarButtonItem?.title = "편집"
+            navigationItem.leftBarButtonItem?.style = .plain
+            self.tableView.setEditing(false, animated: true)
+        } else {
+            navigationItem.leftBarButtonItem?.title = "완료"
+            navigationItem.leftBarButtonItem?.style = .done
+            self.tableView.setEditing(true, animated: true)
+        }
+    }
 }
 
 extension AlarmViewController {
@@ -103,5 +116,10 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
     // 스와이프 액션 > 삭제 버튼 타이틀 설정
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "삭제"
+    }
+    
+    // 편집 모드 여부 설정
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.section == 1 ? true : false
     }
 }

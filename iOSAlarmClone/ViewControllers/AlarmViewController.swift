@@ -9,7 +9,27 @@ import UIKit
 
 class AlarmViewController: UIViewController {
     // 테스트 데이터
-    var testArray = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
+    var testArray = [
+        Alarm(amPm: "오전", time: "05:00", description: "1번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "05:07", description: "2번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "05:16", description: "3번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "05:50", description: "4번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "06:00", description: "5번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "06:10", description: "6번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "06:20", description: "7번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "06:25", description: "8번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "06:35", description: "9번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "06:40", description: "11번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "06:45", description: "12번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "07:05", description: "13번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "07:10", description: "14번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "07:16", description: "15번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "07:24", description: "16번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "07:30", description: "17번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "07:35", description: "18번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "07:42", description: "19번째 알람", onOff: false),
+        Alarm(amPm: "오전", time: "07:57", description: "20번째 알람", onOff: false)
+    ]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -90,7 +110,8 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath) as! AlarmTableViewCell
-            cell.update(testArray[indexPath.row])
+            cell.delegate = self
+            cell.update(testArray[indexPath.row], index: indexPath.row)
             
             return cell
         }
@@ -121,5 +142,14 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
     // 편집 모드 여부 설정
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return indexPath.section == 1 ? true : false
+    }
+}
+
+// MARK: - AlarmTableViewCellDelegate
+extension AlarmViewController: AlarmTableViewCellDelegate {
+    func setOnOff(_ onOff: Bool, index: Int) {
+        let content = testArray[index]
+        
+        testArray[index] = Alarm(amPm: content.amPm, time: content.time, description: content.description, onOff: onOff)
     }
 }
